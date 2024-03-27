@@ -1,0 +1,15 @@
+let temperature = 20;
+let itsRaining = false;
+let minutes;
+
+if (itsRaining) {
+  minutes = 0;
+} else if (temperature < 0 || temperature > 35) {
+  minutes = null;
+} else if (temperature === 20) {
+  minutes = 20;
+} else {
+  minutes = 20 - Math.abs(temperature - 20);
+}
+
+console.log(minutes);

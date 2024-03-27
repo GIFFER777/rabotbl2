@@ -1,0 +1,74 @@
+let time = 15;
+let goToDairy = false;
+let goToStore = false;
+let goToMarket = false;
+
+
+const factory = {
+  name: 'dairy',
+  open: 8,
+  close: 19,
+  break: {
+    start: 13,
+    end: 14,
+  },
+};
+
+const store = {
+  name: 'store',
+  open: 9,
+  close: 17,
+  break: {
+    start: 14,
+    end: 15,
+  },
+};
+
+const market = {
+  name: 'market',
+  open: 7,
+  close: 20,
+  break: {
+    start: 0,
+    end: 0,
+  },
+};
+
+function isWorkingTime(place) {
+  return (
+    time >= place.open &&
+    time < place.close &&
+    time < place.break.start ||
+    time >= place.break.end
+  );
+}
+
+function findClosestWorkingPlace() {
+  if (isWorkingTime(factory)) {
+    return 'dairy';
+  } else if (isWorkingTime(store)) {
+    return 'store';
+  } else if (isWorkingTime(market)) {
+    return 'market';
+  } else {
+    return 'nowhere';
+  }
+}
+
+
+switch (findClosestWorkingPlace()) {
+  case 'dairy':
+    goToDairy = true;
+    break;
+  case 'store':
+    goToStore = true;
+    break;
+  case 'market':
+    goToMarket = true;
+    break;
+  default:
+    
+    break;
+}
+
+console.log(goToDairy, goToStore, goToMarket);

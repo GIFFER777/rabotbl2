@@ -1,0 +1,20 @@
+let price = 4000;
+let discountedPrice;
+
+let discount = 0;
+if (price >= 5000) {
+  discount = 15;
+} else if (price >= 3000) {
+  discount = 10;
+} else if (price >= 1000) {
+  discount = 5;
+}
+
+
+if (discount > 0) {
+  discountedPrice = price * (100 - discount) / 100;
+} else {
+  discountedPrice = price;
+}
+
+console.log(discountedPrice);

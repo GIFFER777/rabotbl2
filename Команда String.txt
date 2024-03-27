@@ -1,0 +1,9 @@
+let number = 123;
+let string = '123';
+
+console.log(number === String(number));
+
+console.log(String(number) === string);
+
+false
+true

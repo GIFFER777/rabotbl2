@@ -1,0 +1,27 @@
+let optimalTime = 80;
+let walkTime = 60;
+let timeLeft;
+
+if (walkTime > optimalTime) {
+  console.log('Прогулка достаточно длительная');
+} else {
+  timeLeft = 0;
+}
+
+walkTime = 90;
+timeLeft = 0;
+
+if (walkTime > optimalTime) {
+  console.log('Прогулка достаточно длительная');
+} else {
+  timeLeft = optimalTime - walkTime;
+}
+
+walkTime = 80;
+timeLeft = 0;
+
+if (walkTime > optimalTime) {
+  console.log('Прогулка достаточно длительная');
+} else {
+  timeLeft = optimalTime - walkTime;
+}
